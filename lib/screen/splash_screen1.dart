@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+class Screen1 extends StatelessWidget {
+  const Screen1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        // =TODO:
+        // karena akan membuat multiple widget 
+        // maka membuat children yang bisa menampung banyak widget "children" 
+        // membuat Image bulat
+        // Membuat Title dengan warna hitam
+        // Membuat subtitle
+        // Membuat 3 bullet kecil
+        // mulai dari warna terang diawal
+        // Membuat Button Continue
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 50),
+            Container(
+              width: 250,
+              height: 250,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.blue,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

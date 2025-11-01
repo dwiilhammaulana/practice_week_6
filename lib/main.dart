@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:splash_screen/screen/splash_screen1.dart';
+
+void main() {
+  runApp(const MyApp()); // <- ini yang jalanin aplikasi
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-             
-            ),
+      title: "1123150008, Dwi ilham maulana",
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+    home: const Screen1(),
     );
   }
 }
