@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:splash_screen/screen/splash_screen2.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -10,12 +11,12 @@ class Login extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(20),
-            child: const Column(
+            child: Column(
               children: [
-                SizedBox(height: 10),
-                Icon(Icons.lock_outline, size: 80, color: Colors.green),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 10),
+                const Icon(Icons.lock_outline, size: 80, color: Colors.green),
+                const SizedBox(height: 20),
+                const Text(
                   "Selamat Datang!",
                   style: TextStyle(
                     fontSize: 20,
@@ -23,33 +24,160 @@ class Login extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                Text(
+                const Text(
                   "Silahkan Login untuk melanjutkan.",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 12, color: Colors.green),
                 ),
-                SizedBox(height: 20),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email_outlined),
-                    labelText: 'Input email',
+                    labelText: 'Email',
+                    hintText: 'Masukan email anda',
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(25)),
                       borderSide: BorderSide(color: Colors.grey),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(25)),
-                      borderSide: BorderSide(
-                        color: Colors.green, // warna saat fokus
-                        width: 2, // ketebalan garis saat fokus
+                      borderSide: BorderSide(color: Colors.green, width: 2),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                TextField(
+                  obscureText: true,
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.lock_outlined),
+                    suffixIcon: Icon(Icons.visibility_off_outlined),
+                    labelText: 'Password',
+                    hintText: 'Masukan password anda',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
+                      borderSide: BorderSide(color: Colors.green, width: 2),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Lupa Password?",
+                      style: TextStyle(color: Colors.blue, fontSize: 14),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Container(
+
+                  child: SizedBox(
+                    height: 40,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 14,
+                          horizontal: 20,
+                        ),
+                      ),
+                      child: const Text(
+                        "Login",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+
+                // Garis dengan tulisan "atau"
+                Row(
+                  children: const [
+                    Expanded(
+                      child: Divider(
+                        color: Colors.grey,
+                        thickness: 1,
+                        endIndent: 10,
+                      ),
+                    ),
+                    Text("atau", style: TextStyle(color: Colors.grey)),
+                    Expanded(
+                      child: Divider(
+                        color: Colors.grey,
+                        thickness: 1,
+                        indent: 10,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+
+                // Google Login Button
+                SizedBox(
+                  width: double.infinity,
+                  height: 40,
+                  child: OutlinedButton.icon(
+                    onPressed: () {
+                      // Aksi login google
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Melakukan login dengan Google...'),
+                          backgroundColor: Colors.blue,
+                        ),
+                      );
+                    },
+                    // Menggunakan Icon.public sebagai placeholder yang lebih umum
+                    icon: const Icon(Icons.public, color: Colors.black),
+                    label: const Text(
+                      "Login dengan Google",
+                      style: TextStyle(color: Colors.black, fontSize: 16),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                      side: const BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                        // Menyamakan radius dengan tombol utama
+                        borderRadius: BorderRadius.circular(25),
                       ),
                     ),
                   ),
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 20),
+
+                // Link ke Halaman Register
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Belum punya akun?"),
+                    TextButton(
+                      onPressed: () {
+                        // Aksi navigasi ke halaman register
+                      },
+                      child: const Text(
+                        "Daftar di sini",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),
