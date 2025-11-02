@@ -36,10 +36,56 @@ class Screen1 extends StatelessWidget {
             fontSize: 30,
             color: Colors.black
           )),
-          Text("Bersiap menghadapi tantangan? \n Temukan solusi survival terbaik di sini.",style: TextStyle(
-            fontSize: 15,
+          Text("Bersiap menghadapi tantangan?\nTemukan solusi survival terbaik di sini.",
+          textAlign: TextAlign.center,
+          style: TextStyle(  
+            fontSize: 12,
             color: Colors.black
           )),
+          SizedBox(height: 5),
+          Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 10,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.green,
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Container(
+                            height: 10,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xFFC8E6C9),
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Container(
+                            height: 10,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xFFC8E6C9),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 30),
+                          Container(
+                            child: ElevatedButton(onPressed: (){
+
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green,
+                            ),
+                             child: Text("Continue",style: TextStyle(
+                              color: Colors.white,
+                             ),)),
+                          )
          ], 
         ),
       ),
