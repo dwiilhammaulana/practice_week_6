@@ -85,9 +85,10 @@ class Screen2 extends StatelessWidget {
                               width: double.infinity,
                             child: ElevatedButton(
                               onPressed: (){
-                                Navigator.pushReplacement(
+                                Navigator.pushAndRemoveUntil(
                                 context,
                               MaterialPageRoute(builder: (context) => Screen3()),
+                              (Route<dynamic> route) => false,
                               );
                             },
                             style: ElevatedButton.styleFrom(
