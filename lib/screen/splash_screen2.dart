@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splash_screen/screen/splash_screen3.dart';
 
 class Screen2 extends StatelessWidget {
   const Screen2({super.key});
@@ -27,7 +28,7 @@ class Screen2 extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: const Color.fromARGB(255, 104, 116, 104),
-              image: DecorationImage(image: AssetImage("assets/images/welcome.png"),
+              image: DecorationImage(image: AssetImage("assets/images/welcome2.png"),
               fit: BoxFit.cover,
               )
             ),
@@ -52,7 +53,7 @@ class Screen2 extends StatelessWidget {
                             width: 10,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.green,
+                              color: Color(0xFFC8E6C9),
                             ),
                           ),
                           SizedBox(width: 5),
@@ -61,7 +62,7 @@ class Screen2 extends StatelessWidget {
                             width: 10,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Color(0xFFC8E6C9),
+                              color: Colors.green,
                             ),
                           ),
                           SizedBox(width: 5),
@@ -84,6 +85,10 @@ class Screen2 extends StatelessWidget {
                               width: double.infinity,
                             child: ElevatedButton(
                               onPressed: (){
+                                Navigator.pushReplacement(
+                                context,
+                              MaterialPageRoute(builder: (context) => Screen3()),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green,

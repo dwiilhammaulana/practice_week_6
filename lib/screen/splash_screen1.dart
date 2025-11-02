@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splash_screen/screen/splash_screen2.dart';
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
@@ -83,7 +84,11 @@ class Screen1 extends StatelessWidget {
                               height: 40,
                               width: double.infinity,
                             child: ElevatedButton(
-                              onPressed: (){
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                              MaterialPageRoute(builder: (context) => Screen2()),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green,
