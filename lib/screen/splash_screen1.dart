@@ -19,6 +19,7 @@ class Screen1 extends StatelessWidget {
         child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
+          // Spacer(),
           const SizedBox(height: 25),
           Container(
             height: 200,
@@ -74,9 +75,10 @@ class Screen1 extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 30),
+                      
+                      SizedBox(height: 40),
                            Container(
-                            margin: EdgeInsets.only(right: 20,left: 20),
+                            margin: EdgeInsets.all(40),
                             child: SizedBox(
                               height: 40,
                               width: double.infinity,
